@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 // import { useState } from "react";
 import Title from "../src/components/Title";
 import { BsEmojiSmileFill } from "react-icons/bs";
@@ -7,18 +7,24 @@ import { AiOutlineComment, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 function LikeButtonApp() {
   const [count, setcount] = useState(0);
   const [like, setLike] = useState(false);
-  
+
   const onclickHandler = () => {
-    setcount(count + 1);
-    //toggling the like status
-    setLike(!like ? true : false);
+    if (!like) {
+      setLike(true);
+      setcount(count + 1);
+    } else {
+      setLike(false);
+      setcount(count - 1);
+    }
+    //   setcount(count + 1);
+    //   setLike(!like ? true : false);
   };
   return (
     <div>
       <Title title="Hi! i m like button component" />
       <div className="container card">
         <div className="headerDiv">
-          <BsEmojiSmileFill className="mr-2 fs-3" />
+          <BsEmojiSmileFill className="mr-2 icon" />
           <h4>Likes {count}</h4>
         </div>
         <div className="imgDiv">
@@ -30,13 +36,12 @@ function LikeButtonApp() {
           />
         </div>
         <div className="footerDiv">
-          <p className="click">
-            comment <AiOutlineComment className="mr-2" />
-          </p>
-          <p onClick={onclickHandler} className="click">
-            like{" "}
-            {like ? <AiFillHeart className="danger" /> : <AiOutlineHeart />}
-          </p>
+          <AiOutlineComment className="click icon" />
+          {like ? (
+            <AiFillHeart className="danger click " onClick={onclickHandler} />
+          ) : (
+            <AiOutlineHeart onClick={onclickHandler} />
+          )}
         </div>
       </div>
     </div>
