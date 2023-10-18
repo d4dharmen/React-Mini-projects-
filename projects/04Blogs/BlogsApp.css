@@ -1,0 +1,11 @@
+.table{
+    background-color: blueviolet;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: azure;
+    box-shadow: 2px 3px 3px;
+    border: 2px solid chartreuse;
+    margin: 10px;
+}

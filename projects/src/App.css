@@ -1,11 +1,19 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
   box-sizing: border-box;
 }
-
+.container{
+  display: flex;
+  justify-content: space-between;
+  width:50vw;
+}
+.container-btn{
+  display: flex;
+  width: 20vw;
+}
 .card{
   background-color:beige;
   box-shadow: 2px 02px 2px grey;
@@ -38,10 +46,28 @@
 .click{
   cursor: pointer;
 }
-.danger{
-  color: crimson;
+.bg-danger{
+  background-color: red;
+}
+.bg-warning{
+  background-color: orange;
+}
+.bg-info{
+  background-color: rgb(2, 91, 126);
 }
 
+
+.button{
+  /* background-color:darkorange; */
+  color: white;
+  font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  /* border: none; */
+  border-radius: 5px;
+  padding: 10px;
+}
 .icon{
 color: yellow;
 padding: 15px;
